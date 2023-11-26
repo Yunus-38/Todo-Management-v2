@@ -1,23 +1,22 @@
-import React, { useState } from 'react'
+import { getAdapter } from 'axios'
+import React, { useEffect, useState } from 'react'
+import { getAllTodos } from '../services/TodoService'
 
 function ListTodoComponent() {
-    const dummyData=[
-        {
-            "id": 1,
-            "title":"Learn Core Java",
-            "description":"learn",
-            "completed": false
-        },
-        {
-            "id": 2,
-            "title":"Learn Core JavaScript",
-            "description":"learn",
-            "completed": false
-        }
 
-    ]
+    const [todos, setTodos] = useState([])
 
-    const [todos, setTodos] = useState(dummyData)
+    useEffect(() => {
+        listTodos();
+    }, [])
+
+    function listTodos(){
+        getAllTodos().then(response => {
+            setTodos(response.data);
+        }).catch(error =>{
+            console.error(error);
+        })
+    }
 
 
   return (
