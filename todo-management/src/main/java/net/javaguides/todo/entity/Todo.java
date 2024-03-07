@@ -7,22 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.extern.apachecommons.CommonsLog;
 
-@Setter
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "todos")
-public class Todo {
+// @Setter
+// @Getter
+// @NoArgsConstructor
+// @AllArgsConstructor
+// @Entity
+// @Table(name = "todos")
+// public class Todo {
 
-    @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//     @Id@GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private Long id;
 
-    @Column( nullable = false)
-    private String title;
+//     @Column( nullable = false)
+//     private String title;
 
-    @Column(nullable = false)
-    private String description;
+//     @Column(nullable = false)
+//     private String description;
 
-    private boolean completed;
-}
+//     private boolean completed;
+// }
